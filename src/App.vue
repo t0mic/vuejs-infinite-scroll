@@ -21,6 +21,7 @@
 </template>
 
 <script>
+// unspash app id
 const appID = '31a48cc863e74789b0eec0bce2bbbcd2bbccdaf3cf28c97eac4d7b2e16baf2f3';
 export default {
   name: 'app',
@@ -28,7 +29,7 @@ export default {
     return {
       photos: [],
       totalPhotos: 0,
-      perPage: 10,
+      perPage: 10, // def. number of pics which will be added on every ajax request
       currentPage: 1,
       loading: false  
     }
@@ -44,7 +45,6 @@ export default {
       if(diffHeight <= scrollTop && !this.loading){
         this.fetchPhotos(this.currentPage);
       }
-
     },
     fetchPhotos(page){
       this.loading = true;
